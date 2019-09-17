@@ -97,9 +97,6 @@ class AddUser extends Component {
   render() {
     return (
       <>
-        <h1>
-          Hello, {this.state.name.first} {this.state.name.last}
-        </h1>
         <input
           type="text"
           name="first"
@@ -115,6 +112,7 @@ class AddUser extends Component {
           value={this.state.last}
           onChange={this.handleChangeText}
         />
+        <br/>
         <button
           onClick={this.handleBtnClick}
           disabled={this.state.invalid === true}
