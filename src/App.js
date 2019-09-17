@@ -1,8 +1,27 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import AddUser from "./components/AddUsers";
 import ListUsers from "./components/ListUsers";
+
+// Ionic
+/* Core CSS required for Ionic components to work properly */
+import "@ionic/react/css/core.css";
+
+/* Optional CSS utils that can be commented out */
+import "@ionic/react/css/padding.css";
+import "@ionic/react/css/float-elements.css";
+import "@ionic/react/css/text-alignment.css";
+import "@ionic/react/css/text-transformation.css";
+import "@ionic/react/css/flex-utils.css";
+import "@ionic/react/css/display.css";
+import {
+  IonApp,
+  IonPage,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonContent
+} from "@ionic/react";
 
 class App extends React.Component {
   state = {
@@ -43,13 +62,24 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <AddUser handleSubmit={this.handleAddUser}></AddUser>
-        <ListUsers
-          users={this.state.people}
-          onDelete={this.handleDeleteUser}
-        ></ListUsers>
-      </div>
+      <IonApp>
+        <IonPage>
+          <IonContent>
+          <IonCard>
+            <IonCardHeader>
+              <h2>Enter A New User</h2>
+            </IonCardHeader>
+            <IonCardContent>
+              <AddUser handleSubmit={this.handleAddUser}></AddUser>
+            </IonCardContent>
+          </IonCard>
+          <ListUsers
+            users={this.state.people}
+            onDelete={this.handleDeleteUser}
+          ></ListUsers>
+          </IonContent>
+        </IonPage>
+      </IonApp>
     );
   }
 }
