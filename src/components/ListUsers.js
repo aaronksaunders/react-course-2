@@ -10,7 +10,6 @@ class ListUsers extends React.Component {
     return users ? (
       <div>
         {this.props.users.map((_user, _index) => {
-          debugger;
           return (
             <div key={_user.id}>
               <h3>
